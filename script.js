@@ -26,6 +26,7 @@ if (contactForm) {
             email: document.getElementById('email').value,
             phone: document.getElementById('phone').value,
             store: document.getElementById('store').value,
+            instagram: (document.getElementById('instagram') || {}).value || '',
             message: document.getElementById('message').value
         };
 
@@ -123,7 +124,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.benefit-card, .testimonial-card, .product-card, .faq-item, .workflow-item');
+    const animatedElements = document.querySelectorAll('.benefit-card, .product-card, .faq-item, .workflow-item');
     animatedElements.forEach(el => {
         observer.observe(el);
     });

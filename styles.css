@@ -36,7 +36,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 0 20px;
     position: relative;
@@ -174,7 +174,7 @@ p {
 /* Logo Header - Combo */
 .logo-header {
     text-align: left;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     position: relative;
     z-index: 3;
     animation: slideInUp 0.6s ease-out;
@@ -183,14 +183,48 @@ p {
 .combo-logos {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 0.75rem;
+    width: 45%;
+    min-width: 240px;
+    padding: 0.75rem 1.125rem;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.combo-logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    position: relative;
+    padding: 0.4rem 0.5rem;
+}
+
+.logo-kero-wrap {
+    z-index: 1;
+}
+
+.logo-kero-wrap .combo-logo {
+    max-width: 220px;
+}
+
+.logo-pupilens-wrap {
+    z-index: 2;
+}
+
+.logo-pupilens-wrap .combo-logo {
+    max-width: 220px;
 }
 
 .combo-logo {
-    max-width: 180px;
+    max-width: 130px;
     height: auto;
-    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
     transition: transform 0.3s ease;
     display: block;
 }
@@ -200,18 +234,21 @@ p {
 }
 
 .combo-plus {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 900;
-    color: white;
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    color: #7320ce;
+    text-shadow: none;
+    z-index: 3;
+    flex-shrink: 0;
+    position: relative;
 }
 
 /* Section 1: Hero - Combined Gradient */
 .hero {
     background: linear-gradient(135deg, #7320ce 0%, #8b3de8 30%, #00d5e0 60%, rgb(18, 16, 53) 100%);
     color: white;
-    padding: 120px 0;
-    min-height: 800px;
+    padding: 50px 0 70px;
+    min-height: auto;
     display: flex;
     align-items: center;
     position: relative;
@@ -287,7 +324,7 @@ p {
     justify-content: center;
     align-items: center;
     position: relative;
-    animation: slideInRightBold 0.8s ease-out;
+    animation: slideInRightBold 0.8s ease-out both;
 }
 
 .hero-image-container {
@@ -402,20 +439,6 @@ p {
     z-index: 2;
 }
 
-.feature-image-item::after {
-    content: '';
-    position: absolute;
-    bottom: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 40px;
-    background: #0a0a0a;
-    border-radius: 50%;
-    border: 2px solid rgba(115, 32, 206, 0.3);
-    z-index: 2;
-}
-
 .feature-image {
     border-radius: 24px;
     width: 100%;
@@ -508,6 +531,11 @@ p {
     line-height: 1.8;
 }
 
+.section-closing {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
 .benefits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -525,22 +553,6 @@ p {
     box-shadow: var(--shadow-md);
     position: relative;
     overflow: hidden;
-}
-
-.benefit-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 6px;
-    background: linear-gradient(90deg, var(--kero-primary), var(--kero-secondary));
-    transform: scaleX(0);
-    transition: transform 0.5s ease;
-}
-
-.benefit-card:hover::before {
-    transform: scaleX(1);
 }
 
 .benefit-card:hover {
@@ -665,6 +677,21 @@ p {
     border-bottom: none;
 }
 
+.product-tagline {
+    margin-top: 1.5rem;
+    font-style: italic;
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+.product-description {
+    text-align: left;
+    margin-bottom: 1.25rem;
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
 .combo-benefit {
     margin-top: 4rem;
     text-align: center;
@@ -742,72 +769,25 @@ p {
     line-height: 1.8;
 }
 
-/* Testimonials */
-.testimonials {
-    padding: 120px 0;
-    background: linear-gradient(180deg, var(--bg-light) 0%, var(--bg-white) 100%);
-    position: relative;
-    z-index: 1;
+.workflow-bullets {
+    list-style: none;
+    margin: 1rem 0;
 }
 
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 3rem;
-    margin-top: 5rem;
-}
-
-.testimonial-card {
-    background: var(--bg-white);
-    border-radius: 24px;
-    padding: 3rem;
-    box-shadow: var(--shadow-lg);
-    transition: all 0.5s ease;
-    border: 4px solid transparent;
-    position: relative;
-}
-
-.testimonial-card::after {
-    content: '"';
-    position: absolute;
-    top: 1.5rem;
-    left: 2rem;
-    font-size: 6rem;
-    color: var(--kero-primary);
-    opacity: 0.15;
-    font-family: Georgia, serif;
-    font-weight: 900;
-}
-
-.testimonial-card:hover {
-    box-shadow: var(--shadow-2xl);
-    transform: translateY(-12px) scale(1.02);
-    border-color: var(--kero-primary);
-}
-
-.testimonial-stars {
-    color: #fbbf24;
-    font-size: 1.75rem;
-    margin-bottom: 2rem;
-    letter-spacing: 3px;
-}
-
-.testimonial-text {
-    font-style: italic;
-    color: var(--text-dark);
-    margin-bottom: 2rem;
-    line-height: 1.9;
-    font-size: 1.125rem;
-    position: relative;
-    z-index: 1;
-    font-weight: 500;
-}
-
-.testimonial-author {
+.workflow-bullets li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
     color: var(--text-light);
     font-size: 1rem;
+    position: relative;
+}
+
+.workflow-bullets li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: var(--kero-primary);
     font-weight: 700;
-    margin-bottom: 0;
 }
 
 /* FAQ */
@@ -1063,11 +1043,11 @@ p {
 @keyframes slideInRightBold {
     from {
         opacity: 0;
-        transform: translateX(50px);
+        transform: translateX(50px) translateY(-15%);
     }
     to {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateX(0) translateY(-15%);
     }
 }
 
@@ -1083,7 +1063,6 @@ p {
 }
 
 .benefit-card,
-.testimonial-card,
 .product-card,
 .faq-item {
     animation: fadeInBold 0.8s ease-out;
@@ -1116,8 +1095,7 @@ html {
     }
 
     .hero {
-        padding: 80px 0;
-        min-height: auto;
+        padding: 40px 0 60px;
     }
 
     .hero-content {
@@ -1137,8 +1115,7 @@ html {
         font-size: 1.25rem;
     }
 
-    .benefits-grid,
-    .testimonials-grid {
+    .benefits-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1166,12 +1143,28 @@ html {
         opacity: 0.05;
     }
 
+    .combo-logos {
+        width: 52%;
+        min-width: 210px;
+        padding: 0.75rem 1rem;
+    }
+
+    .logo-pupilens-wrap {
+        margin-left: 0;
+    }
+
     .combo-logo {
-        max-width: 150px;
+        max-width: 100px;
+    }
+
+    .logo-kero-wrap .combo-logo,
+    .logo-pupilens-wrap .combo-logo {
+        max-width: 170px;
     }
 
     .combo-plus {
-        font-size: 2rem;
+        font-size: 1.25rem;
+        margin: 0 -0.25rem;
     }
 
     .footer-logo-img {
@@ -1185,13 +1178,12 @@ html {
     }
 
     .hero {
-        padding: 60px 0;
+        padding: 30px 0 50px;
     }
 
     .solution,
     .products,
     .integration,
-    .testimonials,
     .faq,
     .final-cta {
         padding: 80px 0;
@@ -1210,8 +1202,27 @@ html {
         font-size: 1.75rem;
     }
 
+    .combo-logos {
+        width: 64%;
+        min-width: 195px;
+        padding: 0.6rem 0.75rem;
+    }
+
+    .logo-pupilens-wrap {
+        margin-left: 0;
+    }
+
     .combo-logo {
-        max-width: 120px;
+        max-width: 85px;
+    }
+
+    .logo-kero-wrap .combo-logo,
+    .logo-pupilens-wrap .combo-logo {
+        max-width: 140px;
+    }
+
+    .combo-plus {
+        font-size: 1.125rem;
     }
 
     .footer-logo-img {
