@@ -790,6 +790,53 @@ p {
     font-weight: 700;
 }
 
+/* Testimonial videos */
+.testimonial-videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    margin-top: 5rem;
+}
+
+.testimonial-video-card {
+    background: var(--bg-white);
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    transition: all 0.5s ease;
+    border: 4px solid transparent;
+}
+
+.testimonial-video-card:hover {
+    box-shadow: var(--shadow-2xl);
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+}
+
+.testimonial-video-card h3 {
+    margin: 0 0 1.5rem;
+    font-size: 1.25rem;
+    color: var(--text-dark);
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 /* FAQ */
 .faq {
     padding: 120px 0;
@@ -953,13 +1000,14 @@ p {
 .contact-info {
     margin-top: 4rem;
     text-align: center;
-    color: rgba(255, 255, 255, 0.95);
+    color: white;
 }
 
 .contact-alternative {
     font-size: 1.5rem;
     margin-bottom: 2.5rem;
     font-weight: 700;
+    color: white;
 }
 
 .contact-phone,
@@ -968,6 +1016,7 @@ p {
     margin-bottom: 1.25rem;
     font-size: 1.125rem;
     font-weight: 600;
+    color: white;
 }
 
 /* Footer */

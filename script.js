@@ -124,7 +124,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.benefit-card, .product-card, .faq-item, .workflow-item');
+    const animatedElements = document.querySelectorAll('.benefit-card, .testimonial-video-card, .product-card, .faq-item, .workflow-item');
     animatedElements.forEach(el => {
         observer.observe(el);
     });
