@@ -21,6 +21,6 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /home/USUARIO_FTP/DOMINIO_PUPILENS_KERO/pupilens_and_kero_otica_LP/
-          local-dir: pupilens_and_kero_otica_LP/
+          local-dir: ./pupilens_and_kero_otica_LP
           protocol: ftps
           port: 21
