@@ -290,7 +290,7 @@ p {
 
 .hero h1 {
     color: white;
-    font-size: 4.5rem;
+    font-size: 3rem;
     margin-bottom: 2rem;
     text-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     animation: slideInUpBold 0.8s ease-out;
@@ -299,12 +299,13 @@ p {
 
 .hero h2 {
     color: rgba(255, 255, 255, 0.95);
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     text-align: left;
     margin-bottom: 2.5rem;
     animation: slideInUpBold 0.8s ease-out 0.2s both;
     text-transform: none;
+    letter-spacing: -0.01em;
 }
 
 .hero-content {
