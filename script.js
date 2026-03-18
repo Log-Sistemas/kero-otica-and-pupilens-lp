@@ -15,7 +15,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 });
 
 // Form submission handler
-const contactForm = document.getElementById('contactForm');
+const contactForm = document.getElementById('pp-ko-form');
 
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
@@ -39,7 +39,9 @@ if (contactForm) {
         showFormMessage('Obrigado! Entraremos em contato em breve para apresentar o combo.', 'success');
         
         // Reset form
-        contactForm.reset();
+        setTimeout(() => {
+            contactForm.reset();
+        }, 500);
         
         // In a real application, you would send the data to a server here
         console.log('Form data:', formData);
@@ -97,7 +99,7 @@ function showFormMessage(message, type) {
     `;
 
     // Insert message after form
-    const form = document.getElementById('contactForm');
+    const form = document.getElementById('pp-ko-form');
     if (form && form.parentNode) {
         form.parentNode.insertBefore(messageElement, form.nextSibling);
     }
